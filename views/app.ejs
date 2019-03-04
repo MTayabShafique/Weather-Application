@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Application</title>
+    <link rel="stylesheet" type="text/css" href="bulma-0.7.4/css/bulma.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+    <section class="hero is-dark" style="height:100px" >
+        <div class="hero-body" style="padding: 1rem 1.5rem;" >
+            <div class="container">
+                    <figure class="image is-64x64" style="float: left" >
+                            <img src="images/weather_logo.png" >
+                        </figure>
+                <h1 class="title" style="line-height: 60px">
+                    Weather Forecast
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns" style="margin-bottom: -3.75rem;">
+                <div class="column is-offset-4 is-4">
+                    <form method="POST">
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <input class="input" name="city_name" type="text" placeholder="City Name">
+                            </div>
+                            <div class="control">
+                                <button class="button is-info"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" style="padding: 2rem 1.5rem;">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                    <% for (weather of weather_data) { %>
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image is-50x50">
+                                    <img src="http://openweathermap.org/img/w/<%= weather.icon %>.png" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <span class="title"><%= weather.city %></span>
+                                        <br>
+                                        <span class="subtitle is-6">Feels Like: <%= weather.temperature %>° C</span>  
+                                        &nbsp;
+                                        <span class="subtitle is-6">Humidity: <%= weather.humidity %> %</span>
+                                        <span class="subtitle is-6">Wind: <%= weather.wind %> m/s</span>
+                                        &nbsp;
+                                        <span class="subtitle is-6">Barometer: <%= weather.pressure %> mb</span>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="subtitle is-6" style="text-transform: capitalize;">Description: <%= weather.description %></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+
+</html>

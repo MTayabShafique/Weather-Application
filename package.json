@@ -1,0 +1,19 @@
+{
+  "name": "weather_app",
+  "version": "1.0.0",
+  "description": "A Simple Nodejs&Expressjs Weather Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Tayyab Shafique",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.0.15",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}
