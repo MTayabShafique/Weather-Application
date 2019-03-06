@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Application</title>
     <link rel="stylesheet" type="text/css" href="bulma-0.7.4/css/bulma.css" />
+    <link rel="stylesheet" type="text/css" href="css/weather-icons-master/css/weather-icons.css" /> <!--Download Link:https://erikflowers.github.io/weather-icons/-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
@@ -26,11 +27,12 @@
     <section class="section">
         <div class="container">
             <div class="columns" style="margin-bottom: -3.75rem;">
-                <div class="column is-offset-4 is-4">
+                <div class="column is-offset-4 is-4" style="width: 35.333%;box-sizing: inherit;">
                     <form method="POST">
                         <div class="field has-addons">
                             <div class="control is-expanded">
-                                <input class="input" name="city_name" type="text" placeholder="City Name">
+                                
+                                <input class="input" name="city_name" type="text" placeholder="Location">
                             </div>
                             <div class="control">
                                 <button class="button is-info"><i class="fas fa-search"></i></button>
@@ -46,7 +48,7 @@
             <div class="columns">
                 <div class="column is-offset-4 is-4">
                     <% for (weather of weather_data) { %>
-                    <div class="box">
+                    <div class="box" style="width:390px;">
                         <article class="media">
                             <div class="media-left">
                                 <figure class="image is-50x50">
@@ -58,13 +60,14 @@
                                     <p>
                                         <span class="title"><%= weather.city %></span>
                                         <br>
-                                        <span class="subtitle is-6">Feels Like: <%= weather.temperature %>° C</span>  
-                                        &nbsp;
-                                        <span class="subtitle is-6">Humidity: <%= weather.humidity %> %</span>
-                                        <span class="subtitle is-6">Wind: <%= weather.wind %> m/s</span>
-                                        &nbsp;
-                                        <span class="subtitle is-6">Barometer: <%= weather.pressure %> mb</span>
+                                        <span class="subtitle is-6"><i class="wi wi-thermometer"></i>&nbsp;Feels Like: <%= weather.temperature %>° C </span>  
+                                        &nbsp; 
+                                        <span class="subtitle is-6"><i class="wi wi-humidity"></i>&nbsp;Humidity: <%= weather.humidity %> %</span>
+                                        <span class="subtitle is-6"><i class="wi wi-strong-wind"></i>&nbsp;Wind: <%= weather.wind %> m/s</span>
+                                        &nbsp;&nbsp;&nbsp;&thinsp;&thinsp;
+                                        <span class="subtitle is-6"><i class="wi wi-barometer"></i>&nbsp;Pressure: <%= weather.pressure %> mb</span>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="subtitle is-6" style="text-transform: capitalize;">Description: <%= weather.description %></span>
+                                        
                                     </p>
                                 </div>
                             </div>
